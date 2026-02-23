@@ -1,141 +1,107 @@
-# 🚀 Welcome to Z.ai Code Scaffold
+# 🧮 Mental Math Trainer
 
-A modern, production-ready web application scaffold powered by cutting-edge technologies, designed to accelerate your development with [Z.ai](https://chat.z.ai)'s AI-powered coding assistance.
+Тренажёр устного счёта с прогрессивной сложностью — от элементарной арифметики до олимпиадных задач уровня Сканави и Демидовича.
 
-## ✨ Technology Stack
+## 🎯 Цель проекта
 
-This scaffold provides a robust foundation built with:
+Научить качественным ментальным преобразованиям: развить навык совершать многошаговые вычисления в уме, контролировать каждый шаг и минимизировать письменно-вспомогательные действия.
 
-### 🎯 Core Framework
-- **⚡ Next.js 16** - The React framework for production with App Router
-- **📘 TypeScript 5** - Type-safe JavaScript for better developer experience
-- **🎨 Tailwind CSS 4** - Utility-first CSS framework for rapid UI development
+**Ключевой принцип:** качество ментальных преобразований важнее скорости.
 
-### 🧩 UI Components & Styling
-- **🧩 shadcn/ui** - High-quality, accessible components built on Radix UI
-- **🎯 Lucide React** - Beautiful & consistent icon library
-- **🌈 Framer Motion** - Production-ready motion library for React
-- **🎨 Next Themes** - Perfect dark mode in 2 lines of code
+## 📊 Уровни сложности
 
-### 📋 Forms & Validation
-- **🎣 React Hook Form** - Performant forms with easy validation
-- **✅ Zod** - TypeScript-first schema validation
+| Уровень | Название | Описание |
+|---------|----------|----------|
+| 1 | Элементарная арифметика | Сложение/вычитание двузначных, умножение/деление на однозначное |
+| 2 | Устный счёт | Умножение двузначных, деление с остатком, простые дроби |
+| 3 | Алгебраические преобразования | Раскрытие скобок, формулы сокращённого умножения |
+| 4 | Уравнения и неравенства | Линейные и квадратные уравнения |
+| 5 | Функции и графики | Исследование функций, производные |
+| 6 | Тригонометрия | Тригонометрические тождества и преобразования |
+| 7 | Логарифмы и степени | Свойства логарифмов, показательные уравнения |
+| 8 | Интегралы и производные | Табличные интегралы, правила дифференцирования |
+| 9 | Сложные выражения | Многоэтажные дроби, радикалы, комплексные преобразования |
+| 10 | Олимпиадные задачи | Задачи уровня Сканави, Демидовича |
 
-### 🔄 State Management & Data Fetching
-- **🐻 Zustand** - Simple, scalable state management
-- **🔄 TanStack Query** - Powerful data synchronization for React
-- **🌐 Fetch** - Promise-based HTTP request
+Каждый уровень содержит 10 подуровней сложности.
 
-### 🗄️ Database & Backend
-- **🗄️ Prisma** - Next-generation TypeScript ORM
-- **🔐 NextAuth.js** - Complete open-source authentication solution
+## 🏗️ Архитектура
 
-### 🎨 Advanced UI Features
-- **📊 TanStack Table** - Headless UI for building tables and datagrids
-- **🖱️ DND Kit** - Modern drag and drop toolkit for React
-- **📊 Recharts** - Redefined chart library built with React and D3
-- **🖼️ Sharp** - High performance image processing
+```
+mental-math/
+├── server/                 # FastAPI backend
+│   ├── app/
+│   │   ├── api/v1/        # REST API endpoints
+│   │   ├── core/          # Конфигурация, безопасность
+│   │   ├── db/            # SQLAlchemy async
+│   │   ├── models/        # ORM модели
+│   │   └── schemas/       # Pydantic схемы
+│   ├── docker-compose.yml # PostgreSQL
+│   └── requirements.txt
+├── MENTAL_MATH_SPEC.md    # Полная спецификация
+└── KODA.md               # Референсная архитектура
+```
 
-### 🌍 Internationalization & Utilities
-- **🌍 Next Intl** - Internationalization library for Next.js
-- **📅 Date-fns** - Modern JavaScript date utility library
-- **🪝 ReactUse** - Collection of essential React hooks for modern development
+## 🚀 Запуск сервера
 
-## 🎯 Why This Scaffold?
-
-- **🏎️ Fast Development** - Pre-configured tooling and best practices
-- **🎨 Beautiful UI** - Complete shadcn/ui component library with advanced interactions
-- **🔒 Type Safety** - Full TypeScript configuration with Zod validation
-- **📱 Responsive** - Mobile-first design principles with smooth animations
-- **🗄️ Database Ready** - Prisma ORM configured for rapid backend development
-- **🔐 Auth Included** - NextAuth.js for secure authentication flows
-- **📊 Data Visualization** - Charts, tables, and drag-and-drop functionality
-- **🌍 i18n Ready** - Multi-language support with Next Intl
-- **🚀 Production Ready** - Optimized build and deployment settings
-- **🤖 AI-Friendly** - Structured codebase perfect for AI assistance
-
-## 🚀 Quick Start
+### Разработка (SQLite)
 
 ```bash
-# Install dependencies
-bun install
-
-# Start development server
-bun run dev
-
-# Build for production
-bun run build
-
-# Start production server
-bun start
+cd server
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to see your application running.
+API будет доступно на http://localhost:8000
 
-## 🤖 Powered by Z.ai
+### Продакшн (PostgreSQL)
 
-This scaffold is optimized for use with [Z.ai](https://chat.z.ai) - your AI assistant for:
-
-- **💻 Code Generation** - Generate components, pages, and features instantly
-- **🎨 UI Development** - Create beautiful interfaces with AI assistance  
-- **🔧 Bug Fixing** - Identify and resolve issues with intelligent suggestions
-- **📝 Documentation** - Auto-generate comprehensive documentation
-- **🚀 Optimization** - Performance improvements and best practices
-
-Ready to build something amazing? Start chatting with Z.ai at [chat.z.ai](https://chat.z.ai) and experience the future of AI-powered development!
-
-## 📁 Project Structure
-
-```
-src/
-├── app/                 # Next.js App Router pages
-├── components/          # Reusable React components
-│   └── ui/             # shadcn/ui components
-├── hooks/              # Custom React hooks
-└── lib/                # Utility functions and configurations
+```bash
+cd server
+docker-compose up -d
+# Измените MM_DATABASE_URL в .env на PostgreSQL
+uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 
-## 🎨 Available Features & Components
+## 📡 API Endpoints
 
-This scaffold includes a comprehensive set of modern web development tools:
+### Аутентификация
+- `POST /api/v1/auth/register` — Регистрация (анонимная или с email)
+- `POST /api/v1/auth/login` — Вход по account_key
+- `GET /api/v1/auth/me` — Информация о пользователе
 
-### 🧩 UI Components (shadcn/ui)
-- **Layout**: Card, Separator, Aspect Ratio, Resizable Panels
-- **Forms**: Input, Textarea, Select, Checkbox, Radio Group, Switch
-- **Feedback**: Alert, Toast (Sonner), Progress, Skeleton
-- **Navigation**: Breadcrumb, Menubar, Navigation Menu, Pagination
-- **Overlay**: Dialog, Sheet, Popover, Tooltip, Hover Card
-- **Data Display**: Badge, Avatar, Calendar
+### Задачи
+- `GET /api/v1/tasks/levels` — Список уровней сложности
+- `GET /api/v1/tasks/topics` — Список тем
+- `POST /api/v1/tasks/generate` — Генерация задачи
+- `POST /api/v1/tasks/validate` — Проверка ответа
 
-### 📊 Advanced Data Features
-- **Tables**: Powerful data tables with sorting, filtering, pagination (TanStack Table)
-- **Charts**: Beautiful visualizations with Recharts
-- **Forms**: Type-safe forms with React Hook Form + Zod validation
+### Прогресс
+- `GET /api/v1/progress/` — Прогресс пользователя
+- `GET /api/v1/sessions/stats` — Статистика
 
-### 🎨 Interactive Features
-- **Animations**: Smooth micro-interactions with Framer Motion
-- **Drag & Drop**: Modern drag-and-drop functionality with DND Kit
-- **Theme Switching**: Built-in dark/light mode support
+## 🧪 Тестирование
 
-### 🔐 Backend Integration
-- **Authentication**: Ready-to-use auth flows with NextAuth.js
-- **Database**: Type-safe database operations with Prisma
-- **API Client**: HTTP requests with Fetch + TanStack Query
-- **State Management**: Simple and scalable with Zustand
+```bash
+cd server
+pytest
+```
 
-### 🌍 Production Features
-- **Internationalization**: Multi-language support with Next Intl
-- **Image Optimization**: Automatic image processing with Sharp
-- **Type Safety**: End-to-end TypeScript with Zod validation
-- **Essential Hooks**: 100+ useful React hooks with ReactUse for common patterns
+## 📚 Документация
 
-## 🤝 Get Started with Z.ai
+- **Swagger UI:** http://localhost:8000/docs
+- **ReDoc:** http://localhost:8000/redoc
+- **Спецификация:** [MENTAL_MATH_SPEC.md](MENTAL_MATH_SPEC.md)
 
-1. **Clone this scaffold** to jumpstart your project
-2. **Visit [chat.z.ai](https://chat.z.ai)** to access your AI coding assistant
-3. **Start building** with intelligent code generation and assistance
-4. **Deploy with confidence** using the production-ready setup
+## 🛠️ Технологии
 
----
+- **Backend:** FastAPI, SQLAlchemy 2.0 (async), Pydantic
+- **Database:** SQLite (dev) / PostgreSQL (prod)
+- **Auth:** JWT, account_key
+- **AI:** OpenRouter (для генерации сложных задач и подсказок)
 
-Built with ❤️ for the developer community. Supercharged by [Z.ai](https://chat.z.ai) 🚀
+## 📝 Лицензия
+
+MIT
