@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "На скриншоте показано два окна, открытых в терминале **LXTerminal** (обозначено в заголовке окна):  \n\n### 1. Основное окно терминала (слева, чёрный фон):  \n- **Текстовая информация** (выходные данные команды, вероятно, `flutter run` или похожей):  \n  - Список пакетов с версиями (например, `riverpod 2.6.1 (3.2.1 available)`, `riverpod_annotation 2.6.1 (4.0.2 available)` и др.).  \n  - Статусы зависимостей: `Got dependencies!`, `1 package is discontinued.`, `37 packages have newer versions incompati...` (текст обрезан).  \n  - Процесс сборки/запуска Flutter-приложения: `Launching lib/main.dart on Linux in debug`, `Building Linux application...`, `✓ Built build/linux/x64/debug/bundle/lezh...` (путь обрезан).  \n  - Синхронизация файлов: `Syncing files to device Linux...`.  \n  - Команды `Flutter run`: `r Hot reload.`, `R Hot restart.`, `h List all available interactive commands`, `d Detach (terminate \"flutter run\" but lea...` (текст обрезан), `c Clear the screen`, `q Quit (terminate the application on the...` (текст обрезан).  \n  - Информация о сервисах: `A Dart VM Service on Linux is available a...` (текст обрезан), `The Flutter DevTools debugger and profiler on Linux is available at: http://127.0.0.1:34587/Y51210mzcdU=/devtools/?uri=ws://127.0.0.1:34587/Y51210mzcdU=/ws`.  \n\n\n### 2. Второе окно (справа, красный фон, заголовок `lezhandr`):  \n- **Сообщение об ошибке** (жёлтый текст):  \n  - `Bad state: No ProviderScope found`  \n  - `See also: https://docs.flutter.dev/testing/errors`  \n\n\n### Итог:  \nСкриншот демонстрирует работу Flutter-приложения в терминале (сборка, запуск) и ошибку в приложении, связанную с отсутствием `ProviderScope` (компонента для управления состоянием в Flutter).",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1771134557,
+  "id": "20260215134909b45ead54ae874f1f",
+  "model": "glm-4.6v",
+  "object": "chat.completion",
+  "request_id": "20260215134909b45ead54ae874f1f",
+  "usage": {
+    "completion_tokens": 542,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2485,
+    "prompt_tokens_details": {
+      "cached_tokens": 4
+    },
+    "total_tokens": 3027
+  }
+}
